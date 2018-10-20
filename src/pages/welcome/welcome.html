@@ -3,13 +3,33 @@
   <div class="splash-info">
     <div class="splash-logo"></div>
     <div class="splash-intro">
-      Input your budget.
+      InstaRam
     </div>
   </div>
   <div padding>
     <ion-item>
       <ion-label>Budget $</ion-label>
       <ion-input [(ngModel)]="amount" type="number" step="0.01" min="0.01" max="100.00"></ion-input>
+    </ion-item>
+    <ion-item>
+      Meat
+      <button (click)="decMeat()" ion-button icon-only item-end outline small color="dark">
+        <ion-icon name="remove"></ion-icon>
+      </button>
+      <span item-end>{{ noMeat }}</span>
+      <button (click)="incMeat()" ion-button icon-only item-end outline small color="dark">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      Vegetables
+      <button (click)="decVegg()" ion-button icon-only item-end outline small color="dark">
+        <ion-icon name="remove"></ion-icon>
+      </button>
+      <span item-end>{{ noVegg }}</span>
+      <button (click)="incVegg()" ion-button icon-only item-end outline small color="dark">
+        <ion-icon name="add"></ion-icon>
+      </button>
     </ion-item>
     <br>
     <button ion-button block (click)="signup()">{{ 'SEARCH' | translate }}</button>

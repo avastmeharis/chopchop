@@ -13,7 +13,9 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
-  amount: int = 12;
+  amount: number = 12;
+  noMeat: number = 0;
+  noVegg: number = 0;
 
   constructor(public navCtrl: NavController) { }
 
@@ -23,5 +25,27 @@ export class WelcomePage {
 
   signup() {
     this.navCtrl.push('SignupPage');
+  }
+
+  incMeat() {
+    this.noMeat++;
+  }
+
+  decMeat() {
+    this.noMeat--;
+    if (this.noMeat < 0) {
+      this.noMeat = 0;
+    }
+  }
+
+  incVegg() {
+    this.noVegg++;
+  }
+
+  decVegg() {
+    this.noVegg--;
+    if (this.noVegg < 0) {
+      this.noVegg = 0;
+    }
   }
 }
