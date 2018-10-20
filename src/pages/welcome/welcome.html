@@ -1,0 +1,17 @@
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Input your budget.
+    </div>
+  </div>
+  <div padding>
+    <ion-item>
+      <ion-label>Budget $</ion-label>
+      <ion-input [(ngModel)]="amount" type="number" step="0.01" min="0.01" max="100.00"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block (click)="signup()">{{ 'SEARCH' | translate }}</button>
+  </div>
+</ion-content>
