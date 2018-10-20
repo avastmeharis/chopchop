@@ -10,10 +10,21 @@ import { Items } from '../../providers';
   templateUrl: 'search.html'
 })
 export class SearchPage {
+  amount: number = 12;
+  noMeat: number = 0;
+  noVegg: number = 0;
 
   currentItems: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) {
+    this.amount = navParams.get('amount');
+    this.noMeat = navParams.get('noMeat');
+    this.noVegg = navParams.get('noVegg');
+  }
+
+  goBack() {
+    this.navCtrl.pop();
+  }
 
   /**
    * Perform a service for the proper items.

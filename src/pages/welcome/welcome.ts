@@ -19,12 +19,12 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController) { }
 
-  login() {
-    this.navCtrl.push('LoginPage');
-  }
-
-  signup() {
-    this.navCtrl.push('SignupPage');
+  search() {
+    this.navCtrl.push('SearchPage', {
+      amount: this.amount,
+      noMeat: this.noMeat,
+      noVegg: this.noVegg
+    });
   }
 
   incMeat() {

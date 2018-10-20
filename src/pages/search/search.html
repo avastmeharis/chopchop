@@ -1,14 +1,53 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+  <ion-navbar color="primary">
+
+    <button ion-button icon-only menuToggle (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <ion-title>
+      ${{ amount }}, {{ noMeat}} {{ noMeat > 1 ? 'Meats' : 'Meat' }}, {{ noVegg }} {{ noVegg > 1 ? 'Veggs' : 'Vegg' }}
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+  <ion-card>
+    <img src="../assets/img/nin-live.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Chicken Breast Ramen
+      </ion-card-title>
+      <p>
+        $10, 1 Meat, 1 Vegg
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img src="../assets/img/nin-live.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Chicken Breast Ramen
+      </ion-card-title>
+      <p>
+        $10, 1 Meat, 1 Vegg
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <img src="../assets/img/nin-live.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Chicken Breast Ramen
+      </ion-card-title>
+      <p>
+        $10, 1 Meat, 1 Vegg
+      </p>
+    </ion-card-content>
+  </ion-card>
   <ion-list>
     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
       <ion-avatar item-start>
